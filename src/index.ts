@@ -1,5 +1,7 @@
 import generateHTMLForRequest from "./generateHTMLForRequest";
-import WaterfallArgs from "./WaterfallArgs.type";
+import generateHTMLForSeparatorLine from "./generateHTMLForSeparatorLine";
+
+import type WaterfallArgs from "./WaterfallArgs.type";
 
 const waterfall = (
 	domNodeSelector: string | HTMLElement,
@@ -43,7 +45,8 @@ const waterfall = (
 	// Now that we have the first and last requests bounds. Let's plot out our HTML divs.
 	if (!firstRequest || !lastRequest) return;
 
-	const rows = [];
+	const rows = ['<div class="waterfall-request-rows">'];
+
 	const waterfallStartsAt = firstRequest.startedAt;
 	const waterfallEndsAt = lastRequest.endedAt;
 	for (let i = 0; i < nRequests; i += 1) {
@@ -52,10 +55,21 @@ const waterfall = (
 			generateHTMLForRequest(request, waterfallStartsAt, waterfallEndsAt)
 		);
 	}
+	// Add a few lines to the waterfall for separation of times
+	const nLinesNeeded = 10;
+	for (let i = 0; i <= nLinesNeeded; i += 1) {
+		rows.push(
+			generateHTMLForSeparatorLine(
+				i,
+				nLinesNeeded,
+				waterfallEndsAt.getTime() - waterfallStartsAt.getTime()
+			)
+		);
+	}
+	rows.push("</div>");
 
 	// Append the HTML into the dom node.
 	domNode.innerHTML = rows.join("");
 };
 
 export default waterfall;
-export { waterfall };

@@ -12,7 +12,7 @@ const generateHTMLForRequest = (
 	const requestLeftOffset =
 		(request.startedAt.getTime() - startBound.getTime()) / 100;
 	return `
-	<div class="waterfall-request-row">
+	<div class="waterfall-request-row" title="${request.url}">
 		<div class="waterfall-request" style="width: ${requestWidth}%; left:${requestLeftOffset}%"></div>
 	</div>
 	`;
