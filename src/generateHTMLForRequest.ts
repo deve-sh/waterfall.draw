@@ -6,8 +6,9 @@ const generateHTMLForRequest = (
 	endBound: Date
 ) => {
 	const requestWidth =
-		(request.endedAt.getTime() - request.startedAt.getTime()) /
-		(endBound.getTime() - startBound.getTime());
+		((request.endedAt.getTime() - request.startedAt.getTime()) /
+			(endBound.getTime() - startBound.getTime())) *
+		100;
 	const requestLeftOffset =
 		(request.startedAt.getTime() - startBound.getTime()) / 100;
 	return `
