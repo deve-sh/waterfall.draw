@@ -1,4 +1,5 @@
 import generateHTMLForRequest from "./generateHTMLForRequest";
+import generateHTMLForRequestURL from "./generateHTMLForRequestURL";
 import generateHTMLForSeparatorLine from "./generateHTMLForSeparatorLine";
 
 import type WaterfallArgs from "./WaterfallArgs.type";
@@ -56,9 +57,7 @@ const waterfall = (
 		requestRectangleRows.push(
 			generateHTMLForRequest(request, waterfallStartsAt, waterfallEndsAt)
 		);
-		urlLabelRows.push(
-			`<div class="waterfall-request-label-row" title="${request.url}">${request.url}</div>`
-		);
+		urlLabelRows.push(generateHTMLForRequestURL(request));
 	}
 	// Add a few lines to the waterfall for separation of times
 	const nLinesNeeded = 10;

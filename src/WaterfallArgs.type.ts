@@ -4,6 +4,7 @@ export interface WaterfallFragment {
 	startedAt: Date;
 	endedAt: Date;
 	contentDownloadedIn?: number;
+	method?: string;
 }
 
 type WaterfallArgs = WaterfallFragment[];

@@ -1,4 +1,4 @@
-import { WaterfallFragment } from "./WaterfallArgs.type";
+import type { WaterfallFragment } from "./WaterfallArgs.type";
 
 const generateHTMLForRequest = (
 	request: WaterfallFragment,
