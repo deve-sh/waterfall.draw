@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Screenshot.png" title="Waterfall.Draw">
+  <img src="./Screenshot.png" title="Waterfall.Draw" style="border: 1px solid #efefef">
 </p>
 
 A simple JavaScript library to draw a waterfall chart of network requests.
@@ -62,11 +62,6 @@ const requests = [
 
 waterfall(
     "#elementselector" or document.getElementById('elementselector'),
-    requests,
-    options
+    requests
 );
 ```
-
-### Options
-
-To Be Added soon in next version for customisation of styling and functionality.
