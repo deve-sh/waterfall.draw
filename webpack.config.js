@@ -8,5 +8,6 @@ module.exports = {
 		libraryExport: "default",
 		library: "waterfall",
 		libraryTarget: "umd",
+		globalObject: "this",
 	},
 };
