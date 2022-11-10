@@ -1,0 +1,79 @@
+.waterfall-container {
+	display: flex;
+	border: 0.0125rem solid #efefef;
+}
+
+.waterfall-request-label-rows {
+	flex: 1;
+	padding-top: 0.5rem; /* Offset the separator line labels */
+	max-width: 20vw;
+}
+
+.waterfall-request-label-row {
+	height: 50px;
+	display: flex;
+	padding-left: 0.75rem;
+	color: #787878;
+	font-size: 0.875rem;
+	padding: 0 0.5rem;
+	align-items: center;
+	border-bottom: 0.0125rem solid #efefef;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.waterfall-request-rows {
+	background: transparent;
+	position: relative;
+	height: fit-content;
+	border-top: 0.0125rem solid #efefef;
+	border-bottom: 0.0125rem solid #efefef;
+	padding-top: 0.5rem;
+	flex: 4;
+}
+
+.waterfall-request-row {
+	padding: 1.55rem;
+	position: relative;
+}
+
+.waterfall-request-row:not(:first-child) {
+	border-top: 0.0125rem solid #efefef;
+}
+
+.waterfall-request {
+	height: 1.25rem;
+	background-color: #2491c7;
+	border: 0.0175rem solid #2491c7;
+	background-image: linear-gradient(
+		45deg,
+		#2491c7 12.5%,
+		#ffffff 12.5%,
+		#ffffff 50%,
+		#2491c7 50%,
+		#2491c7 62.5%,
+		#ffffff 62.5%,
+		#ffffff 100%
+	);
+	background-size: 5.66px 5.66px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.waterfall-separator-line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 0.0125rem;
+	background: #efefef;
+	z-index: -1;
+}
+
+.waterfall-separator-label {
+	color: #afafaf;
+	font-size: 0.5rem;
+	top: 0;
+	position: absolute;
+}
