@@ -42,23 +42,28 @@ const waterfall = (
 		else if (request.endedAt > lastRequest.endedAt) lastRequest = request;
 	}
 
-	// Now that we have the first and last requests bounds. Let's plot out our HTML divs.
 	if (!firstRequest || !lastRequest) return;
 
-	const rows = ['<div class="waterfall-request-rows">'];
+	let completeHTML = '<div class="waterfall waterfall-container">';
+	// Now that we have the first and last requests bounds. Let's plot out our HTML divs for waterfall rows.
+	const requestRectangleRows = ['<div class="waterfall-request-rows">'];
+	const urlLabelRows = ['<div class="waterfall-request-label-rows">'];
 
 	const waterfallStartsAt = firstRequest.startedAt;
 	const waterfallEndsAt = lastRequest.endedAt;
 	for (let i = 0; i < nRequests; i += 1) {
 		const request = requests[i];
-		rows.push(
+		requestRectangleRows.push(
 			generateHTMLForRequest(request, waterfallStartsAt, waterfallEndsAt)
+		);
+		urlLabelRows.push(
+			`<div class="waterfall-request-label-row" title="${request.url}">${request.url}</div>`
 		);
 	}
 	// Add a few lines to the waterfall for separation of times
 	const nLinesNeeded = 10;
 	for (let i = 0; i <= nLinesNeeded; i += 1) {
-		rows.push(
+		requestRectangleRows.push(
 			generateHTMLForSeparatorLine(
 				i,
 				nLinesNeeded,
@@ -66,10 +71,14 @@ const waterfall = (
 			)
 		);
 	}
-	rows.push("</div>");
+
+	requestRectangleRows.push("</div>");
+	urlLabelRows.push("</div>");
 
 	// Append the HTML into the dom node.
-	domNode.innerHTML = rows.join("");
+	completeHTML +=
+		urlLabelRows.join("") + requestRectangleRows.join("") + "</div>";
+	domNode.innerHTML = completeHTML;
 };
 
 export default waterfall;
