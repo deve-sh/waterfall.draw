@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Screenshot.png" title="Waterfall.Draw" style="border: 1px solid #efefef">
+  <img src="https://raw.githubusercontent.com/deve-sh/waterfall.draw/main/Screenshot.png?token=GHSAT0AAAAAABLOK464AS3RCLYGJVU2B5I4Y3MSNUQ" title="Waterfall.Draw" style="border: 1px solid #efefef">
 </p>
 
 A simple JavaScript library to draw a waterfall chart of network requests.
