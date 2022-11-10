@@ -2,7 +2,7 @@
   <img src="./Screenshot.png" title="Waterfall.Draw" style="border: 1px solid #efefef">
 </p>
 
-A simple JavaScript library to draw a waterfall chart of network requests.
+A simple Framework and Library Agnostic library to draw a waterfall chart of network requests.
 
 ### Installation
 
