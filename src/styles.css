@@ -1,6 +1,7 @@
 .waterfall-container {
 	display: flex;
 	border: 0.0125rem solid #efefef;
+	font-family: sans-serif;
 }
 
 .waterfall-request-label-rows {
