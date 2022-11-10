@@ -11,7 +11,7 @@
 }
 
 .waterfall-request-label-row {
-	height: 50px;
+	height: 3.125rem;
 	display: flex;
 	padding-left: 0.75rem;
 	color: #787878;
@@ -45,6 +45,7 @@
 
 .waterfall-request {
 	height: 1.25rem;
+	border-radius: 0.175rem;
 	background-color: #2491c7;
 	border: 0.0175rem solid #2491c7;
 	background-image: linear-gradient(
