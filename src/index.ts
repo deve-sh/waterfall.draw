@@ -45,13 +45,22 @@ const waterfall = (
 
 	if (!firstRequest || !lastRequest) return;
 
-	let completeHTML = '<div class="waterfall waterfall-container">';
-	// Now that we have the first and last requests bounds. Let's plot out our HTML divs for waterfall rows.
-	const requestRectangleRows = ['<div class="waterfall-request-rows">'];
-	const urlLabelRows = ['<div class="waterfall-request-label-rows">'];
-
 	const waterfallStartsAt = firstRequest.startedAt;
 	const waterfallEndsAt = lastRequest.endedAt;
+
+	let completeHTML = '<div class="waterfall waterfall-container">';
+	// Now that we have the first and last requests bounds. Let's plot out our HTML divs for waterfall rows.
+	const twentySeconds = 20 * 1000;
+	const minWidthAttribute =
+		nRequests > 20 &&
+		waterfallEndsAt.getTime() - waterfallStartsAt.getTime() > twentySeconds
+			? `min-width: ${nRequests * 5}vw;`
+			: "";
+	const requestRectangleRows = [
+		`<div class="waterfall-request-rows-wrapper"><div class="waterfall-request-rows" style="${minWidthAttribute}">`,
+	];
+	const urlLabelRows = ['<div class="waterfall-request-label-rows">'];
+
 	for (let i = 0; i < nRequests; i += 1) {
 		const request = requests[i];
 		requestRectangleRows.push(
@@ -71,7 +80,7 @@ const waterfall = (
 		);
 	}
 
-	requestRectangleRows.push("</div>");
+	requestRectangleRows.push("</div></div>");
 	urlLabelRows.push("</div>");
 
 	// Append the HTML into the dom node.

@@ -2,12 +2,14 @@
 	display: flex;
 	border: 0.0125rem solid #efefef;
 	font-family: sans-serif;
+	overflow: hidden;
 }
 
 .waterfall-request-label-rows {
 	flex: 1;
 	padding-top: 0.5rem; /* Offset the separator line labels */
 	max-width: 20vw;
+	border-right: 0.0125rem solid #efefef;
 }
 
 .waterfall-request-label-row {
@@ -35,6 +37,12 @@
 	min-width: 3rem;
 }
 
+.waterfall-request-rows-wrapper {
+	overflow: hidden;
+	overflow-x: auto;
+	flex: 4;
+}
+
 .waterfall-request-rows {
 	background: transparent;
 	position: relative;
@@ -42,7 +50,6 @@
 	border-top: 0.0125rem solid #efefef;
 	border-bottom: 0.0125rem solid #efefef;
 	padding-top: 0.5rem;
-	flex: 4;
 }
 
 .waterfall-request-row {
@@ -56,19 +63,8 @@
 
 .waterfall-request {
 	height: 1.25rem;
-	background-color: #2491c7;
+	background-color: #a8dbf4;
 	border: 0.0175rem solid #2491c7;
-	background-image: linear-gradient(
-		45deg,
-		#2491c7 12.5%,
-		#ffffff 12.5%,
-		#ffffff 50%,
-		#2491c7 50%,
-		#2491c7 62.5%,
-		#ffffff 62.5%,
-		#ffffff 100%
-	);
-	background-size: 5.66px 5.66px;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);

@@ -7,12 +7,10 @@ const generateHTMLForRequest = (
 ) => {
 	const requestWidth =
 		((request.endedAt.getTime() - request.startedAt.getTime()) /
-			(endBound.getTime() - startBound.getTime())) *
-		100;
+			(endBound.getTime() - startBound.getTime()) || 0.1) * 100;
 	const requestLeftOffset =
 		((request.startedAt.getTime() - startBound.getTime()) /
-			(endBound.getTime() - startBound.getTime())) *
-		100;
+			(endBound.getTime() - startBound.getTime()) || 0.1) * 100;
 	return `
 	<div class="waterfall-request-row" title="${request.url}">
 		<div class="waterfall-request" style="width: ${requestWidth}%; left:${requestLeftOffset}%"></div>
