@@ -79,4 +79,14 @@ describe("Tests for presense of DOM Nodes and valid style attributes", () => {
 			requests.length
 		);
 	});
+
+	it("should create corresponding labels and request method divs", () => {
+		for (let i = 0; i < requests.length; i += 1) {
+			const requestLabelRow = document.getElementsByClassName(
+				"waterfall-request-label-row"
+			)[i];
+			expect(requestLabelRow.textContent).toMatch(requests[i].method);
+			expect(requestLabelRow.textContent).toMatch(requests[i].url);
+		}
+	});
 });
