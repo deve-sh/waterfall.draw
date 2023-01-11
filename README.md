@@ -38,25 +38,25 @@ const requests = [
 		url: "/api/v1/a",
 		startedAt: new Date(now),
 		endedAt: new Date(now + 5000),
-        method: 'GET'
+        	method: 'GET'
 	},
 	{
 		url: "/api/v2/b",
 		startedAt: new Date(now + 5000),
 		endedAt: new Date(now + 10000),
-        method: 'POST'
+        	method: 'POST'
 	},
 	{
 		url: "/api/v2/c",
 		startedAt: new Date(now + 2000),
 		endedAt: new Date(now + 5000),
-        method: 'PUT'
+        	method: 'PUT'
 	},
 	{
 		url: "/api/v2/d",
 		startedAt: new Date(now + 6500),
 		endedAt: new Date(now + 7000),
-        method: 'DELETE'
+        	method: 'DELETE'
 	},
 ];
 
